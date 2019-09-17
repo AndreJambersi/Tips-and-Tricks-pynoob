@@ -12,6 +12,9 @@ import pandas as pd
 #With this one you create a new column with only the year and month ('YYYY-MM') of the date of the previous column, you can use it to group all information about a month or something like that, the previous column needs to be datetime type, you can use "pd.to_datetime(custumers_table['created_at'])" to change the type. In this example I use 'YYYY-MM', but you can also get iferent formats by changing the 'M' in the code.
 custumers_table['created_year_month'] = custumers_table['created_at'].dt.to_period('M')
 
+#Usually when you group a column it get a weird format, so, you can use 'reset index' to return to the regular format
+data_table2 = data_table.groupby(['id']).sum().reset_index()
+
 #This is kind of dumb, but take a while to me to figure out, 'copy_of_real = real' don't create a copy of your Dataframe, so you have to use the code below.
 copy_of_real = real.copy()
 
