@@ -114,3 +114,6 @@ gd.set_with_dataframe(ws, data)
 #Correlation heatmap
 import seaborn as sns
 sns.heatmap(z.corr(), annot=True, fmt=".2f");
+
+#DataFrame general info
+df.info()
