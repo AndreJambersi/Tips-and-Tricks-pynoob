@@ -110,3 +110,7 @@ ws = gc.open("sheet name").worksheet("worksheet name")
 data_get = gd.get_as_dataframe(ws)
 #with this you write in your worksheet:
 gd.set_with_dataframe(ws, data)
+
+#Correlation heatmap
+import seaborn as sns
+sns.heatmap(z.corr(), annot=True, fmt=".2f");
