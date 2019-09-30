@@ -49,6 +49,15 @@ cur.close()
 subset = df[['column1','column2','column3']]
 tuples = [tuple(x) for x in subset.values]
 
+#The code below use the Numpy library, the result is based in the selected conditions
+conditions = [
+              (table['amount_charged'] > 200000),
+              (table['amount_charged'] >= 100000) & (table['amount_charged'] <= 200000),
+              (table['amount_charged'] >= 50000) & (table['amount_charged'] < 100000),
+              (table['amount_charged'] < 50000)]
+choices = ['above 2k','between 1k and 2k','between 500 and 1000','below 500']
+table['Group'] = np.select(conditions,choices,default='null')
+
 #Here I show some examples of some Pipedrive library that I use sometimes
 from pipedrive.client import Client
 #Here you can get data from your filters, probably you will need to paginate because this get only 100 deals so use the start to decide where you want to begin
