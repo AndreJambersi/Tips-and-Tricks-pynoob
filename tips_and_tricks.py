@@ -126,3 +126,5 @@ sns.heatmap(z.corr(), annot=True, fmt=".2f");
 
 #DataFrame general info
 df.info()
+
+#this link it's a guide to generate the requirements https://qxf2.com/blog/auto-generate-requirements-txt-file-using-pipreqs/
