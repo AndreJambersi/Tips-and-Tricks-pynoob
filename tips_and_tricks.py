@@ -128,3 +128,9 @@ sns.heatmap(z.corr(), annot=True, fmt=".2f");
 df.info()
 
 #this link it's a guide to generate the requirements https://qxf2.com/blog/auto-generate-requirements-txt-file-using-pipreqs/
+
+#To get holidays use this awesome librarie(https://pypi.org/project/holidays/)
+import holidays
+#And here a example
+for date, name in sorted(holidays.US(state='CA', years=2014).items()):
+    print(date, name)
