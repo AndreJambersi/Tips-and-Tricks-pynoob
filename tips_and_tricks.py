@@ -134,3 +134,11 @@ import holidays
 #And here a example
 for date, name in sorted(holidays.US(state='CA', years=2014).items()):
     print(date, name)
+
+#To create packages and upload at PyPI
+#at the comand promp type:"cd 'PATH_OF_THE_FILES'"
+#"python setup.py sdist"
+#"twine upload dist/*" If you have some problems with twine, try to locate the twine.exe file in your computer and add this path
+#insert your username and password
+#DONE!
+#To upload a newer version, follow the same proceeds, but instead of "twine upload dist/*" use "twine upload --skip-existing dist/*"
