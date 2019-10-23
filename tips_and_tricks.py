@@ -142,3 +142,4 @@ for date, name in sorted(holidays.US(state='CA', years=2014).items()):
 #insert your username and password
 #DONE!
 #To upload a newer version, follow the same proceeds, but instead of "twine upload dist/*" use "twine upload --skip-existing dist/*"
+#Also remember that if you, for some reason, delete some version in the PyPI page, you should also delete the same version in your 'PATH/dist' folder, otherwise, you will have some problems to upload new versions.
