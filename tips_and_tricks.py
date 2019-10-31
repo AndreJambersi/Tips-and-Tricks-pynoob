@@ -143,3 +143,6 @@ for date, name in sorted(holidays.US(state='CA', years=2014).items()):
 #DONE!
 #To upload a newer version, follow the same proceeds, but instead of "twine upload dist/*" use "twine upload --skip-existing dist/*"
 #Also remember that if you, for some reason, delete some version in the PyPI page, you should also delete the same version in your 'PATH/dist' folder, otherwise, you will have some problems to upload new versions.
+
+#While using Google Colab, there are some limits in sizes, so using this, for example, you can see this dataframe completely
+pd.set_option('display.max_rows', df.shape[0]+1)
