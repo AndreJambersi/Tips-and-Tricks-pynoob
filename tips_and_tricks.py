@@ -154,3 +154,7 @@ from google.colab import files
 
 uploaded = files.upload()
 df = pd.read_csv('file_name.csv',delimiter=',')
+
+#To download files (in this example a .csv and generating a DataFrame) into Google Colab, you can use
+df.to_csv("archive.csv", sep=",", index=False) #Here you can change the separator(sep) and if you want to import the row number value(index=True)
+files.download("archive.csv")  
