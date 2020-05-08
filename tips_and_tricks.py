@@ -13,6 +13,7 @@ import pandas as pd
 custumers_table['created_year_month'] = custumers_table['created_at'].dt.to_period('M')
 
 #Usually when you group a column it get a weird format, so, you can use 'reset index' to return to the regular format
+#Also, when you use the groupby function, it returns nothing if one of the values is empty(like NaT or NaN)
 data_table2 = data_table.groupby(['id']).sum().reset_index()
 
 #This is kind of dumb, but take a while to me to figure out, 'copy_of_real = real' don't create a copy of your Dataframe, so you have to use the code below.
