@@ -12,6 +12,14 @@ import pandas as pd
 #With this one you create a new column with only the year and month ('YYYY-MM') of the date of the previous column, you can use it to group all information about a month or something like that, the previous column needs to be datetime type, you can use "pd.to_datetime(custumers_table['created_at'])" to change the type. In this example I use 'YYYY-MM', but you can also get iferent formats by changing the 'M' in the code.
 custumers_table['created_year_month'] = custumers_table['created_at'].dt.to_period('M')
 
+#If you want to use a function in each row of a column you can use the apply:
+#function
+def function_x(var):
+    function_result = var+var
+    return function_result
+#example
+df['column_name'].apply(function_x)
+
 #Usually when you group a column it get a weird format, so, you can use 'reset index' to return to the regular format
 #Also, when you use the groupby function, it returns nothing if one of the values is empty(like NaT or NaN)
 data_table2 = data_table.groupby(['id']).sum().reset_index()
